@@ -14,13 +14,13 @@ export default function Tareas() {
   return (
     <Box  my={2}>
       <Grid container spacing={1}>
-        <Grid item xs={3}>
+        <Grid item xs={12} md={3} mb={3}>
           <FormTarea addTarea={addTarea}/>
         </Grid>
-        <Grid item xs={9}>
-          <Grid container spacing={4}>
+        <Grid item xs={12} md={9}>
+          <Grid container spacing={4} >
             {tareas.map((tarea) => (
-              <Grid item xs={3} key={uuidv4()}>
+              <Grid item xs={6} md={4} lg={3} key={uuidv4()}>
                 <Tarea descripcion={tarea.descripcion} titulo={tarea.titulo} />
               </Grid>
             ))}
