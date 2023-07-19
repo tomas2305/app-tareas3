@@ -11,6 +11,10 @@ export default function Tareas() {
     setTareas([...tareas, tarea]);
   }
 
+  function deleteTarea(id){
+    setTareas(tareas.filter(tarea => tarea.id !== id))
+  }
+
   return (
     <Box  my={2}>
       <Grid container spacing={1}>
@@ -21,7 +25,7 @@ export default function Tareas() {
           <Grid container spacing={4} >
             {tareas.map((tarea) => (
               <Grid item xs={6} md={4} lg={3} key={uuidv4()}>
-                <Tarea descripcion={tarea.descripcion} titulo={tarea.titulo} />
+                <Tarea deleteTarea={deleteTarea} id={tarea.id} descripcion={tarea.descripcion} titulo={tarea.titulo} />
               </Grid>
             ))}
           </Grid>

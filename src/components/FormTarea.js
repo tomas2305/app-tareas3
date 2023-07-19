@@ -1,8 +1,10 @@
 import { Box, Button, FormControl, TextField } from "@mui/material";
 import React, { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function FormTarea(props) {
   const [input, setInput] = useState({
+    id: 'XD',
     titulo: '',
     descripcion: ''
   });
@@ -34,14 +36,15 @@ export default function FormTarea(props) {
 
   function addNuevaTarea(event) {
     event.preventDefault();
-    props.addTarea(input);
-    setInput({titulo:'', descripcion:''})
+    let nuevoID = uuidv4();
+    props.addTarea({...input, id:nuevoID});
+    setInput({id: '',titulo:'', descripcion:''})
     setEsFormCompleto(false)
   }
 
 
   return (
-    <Box textAlign="left" my={2} component="form">
+    <Box textAlign="left" my={2}>
       <FormControl>
         <TextField
           label="Titulo"
@@ -59,6 +62,7 @@ export default function FormTarea(props) {
           inputMode="text"
           value={input.descripcion}
           onChange={cambiarDescripcion}
+          multiline
         ></TextField>
         <Button disabled={!esFormCompleto} onClick={addNuevaTarea} type="button" sx={{ mt: 2 }} variant="contained">
           Agregar Tarea

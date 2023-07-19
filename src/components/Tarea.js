@@ -1,14 +1,19 @@
 import { Delete } from "@mui/icons-material";
 import {
+  Box,
     Button,
   Card,
-  CardActionArea,
   CardContent,
   Typography,
 } from "@mui/material";
 import React from "react";
 
 export default function Tarea(props) {
+
+  function deleteTarea(event){
+    props.deleteTarea(props.id)
+  }
+
   return (
     <Card
       variant="outlined"
@@ -22,9 +27,9 @@ export default function Tarea(props) {
         </Typography>
         <Typography variant="body2">{props.descripcion}</Typography>
       </CardContent>
-      {/* <CardActionArea>
-        <Button><Delete fontSize="large"/></Button>
-      </CardActionArea> */}
+      <Box textAlign='right'>
+        <Button onClick={deleteTarea}><Delete fontSize="small"/></Button>
+      </Box>
     </Card>
   );
 }
