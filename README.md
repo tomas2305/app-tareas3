@@ -8,6 +8,8 @@ https://app-tareas3.web.app
 
 ## Funcionalidades
 
-*Agregar Tareas*
-*Eliminar Tareas*
-*Tachar Tareas Completadas*
+-*Agregar Tareas*
+
+-*Eliminar Tareas*
+
+-*Tachar Tareas Completadas*
