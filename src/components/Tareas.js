@@ -24,8 +24,8 @@ export default function Tareas() {
         <Grid item xs={12} md={9}>
           <Grid container spacing={4} >
             {tareas.map((tarea) => (
-              <Grid item xs={6} md={4} lg={3} key={uuidv4()}>
-                <Tarea deleteTarea={deleteTarea} id={tarea.id} descripcion={tarea.descripcion} titulo={tarea.titulo} />
+              <Grid item xs={6} md={4} lg={3} key={tarea.id}>
+                <Tarea  completada={tarea.completada} deleteTarea={deleteTarea} id={tarea.id} descripcion={tarea.descripcion} titulo={tarea.titulo} />
               </Grid>
             ))}
           </Grid>
