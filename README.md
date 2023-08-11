@@ -4,7 +4,7 @@ Tercera app de tareas hecha con React.
 
 ## Deploy 
 
-https://app-tareas3.web.app
+https://app-tareas-3.web.app
 
 ## Funcionalidades
 
